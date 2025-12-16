@@ -7,7 +7,7 @@
   <style>
     body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0px;
   background: linear-gradient(135deg, 
     #6c7499 0%, 
     #efe3fa 25%, 
@@ -15,11 +15,12 @@
     #fae1e4 75%, 
     #bad8f2 100%);
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .large-radio input[type="radio"] {
   transform: scale(1.5); /* Увеличивает в 1.5 раза */
-  margin: 0 10px;
+  margin: 0 8px;
 }
 
 .quiz-container {
@@ -32,9 +33,11 @@
     #decfb9 50%, 
     #9599b4 75%, 
     #729298 100%);
-  padding: 30px;
+  padding: 15px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-sizing: border-box; /* Важно! */
+  overflow: hidden; /* Скрыть переполнение */
 }
 
 .linkinParkimage {
@@ -43,9 +46,10 @@
 }
 
 .top-right-image {
-  width: 70%;
+  width: 100%; /* Полная ширина на мобильных */
+  max-width: 600px; /* Ограничение на больших экранах */
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .intro-text {
@@ -55,6 +59,8 @@
   padding: 20px;
   background: #cedcea;
   border-radius: 10px;
+  word-wrap: break-word; /* Перенос длинных слов */
+  overflow-wrap: break-word;
 }
 
 .question-container {
@@ -65,6 +71,9 @@
   border-radius: 15px;
   transition: all 0.3s;
   background: #637975;
+  box-sizing: border-box; /* Важно! */
+  overflow: hidden; /* Скрыть переполнение */
+  width: 100%; /* Гарантируем 100% ширину */
 }
 
 .question-container.active {
